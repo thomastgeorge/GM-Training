@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>UserManagement</servlet-name>
+  	<display-name>UserManagement</display-name>
+  	<description></description>
+  	<servlet-class>com.grayMatter.UserManagementServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserLoginServlet</servlet-name>
+  	<display-name>UserLoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.grayMatter.UserLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UserManagement</servlet-name>
+  	<url-pattern>/UserManagementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserLoginServlet</servlet-name>
+  	<url-pattern>/UserLoginServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
