@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <select>
+            <option value="B.Tech" name="degree">B.Tech</option>
+            <option value="M.Tech" name="degree">M.Tech</option>
+            <option value="B.Com" name="degree">B.Com</option>
+            <option value="B.Arch" name="degree">B.Arch</option>
+        </select>
+        <button type="button" onclick="readSelected()">Submit</button>
+    </form>
+    
+    <script>
+        function readSelected() {
+            let check = document.getElementsByName('degree');
+            check.forEach((c)=>{
+                if(c.selected)
+                    console.log(c.value)
+            });
+        }
+    </script>
+</body>
+</html>

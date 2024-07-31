@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <label for="skills">Skills</label>
+        <input name="skills" type="radio" value="C">C
+        <input name="skills" type="radio" value="C++">C++
+        <input name="skills" type="radio" value="Java">Java
+        <input name="skills" type="radio" value="Python">Python
+        <button type="button" onclick="readRadio()">Submit</button>
+    </form>
+    
+    <script>
+        function readRadio() {
+            let check = document.getElementsByName('skills');
+            check.forEach((c)=>{
+                if(c.checked)
+                console.log(c.value)
+            });
+        }
+    </script>
+</body>
+</html>
