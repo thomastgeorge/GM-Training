@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+<!-- byName checks with the bean name, byType Checks with the Type of data with the Class  -->
+
+<!-- while doing autowiring through constructor and bean class not having constructor then spring container will perform 
+ -->
+	    <!-- using constructor -->
+    <bean name="stud1" class="com.grayMatter.beans.Student" autowire="byName" scope="prototype">
+    	<constructor-arg name="name" value="user"></constructor-arg>
+    	<constructor-arg name="id" value="881"></constructor-arg>
+    	<constructor-arg name="number" value="124567890"></constructor-arg>
+    	<constructor-arg name="order" ref="ord"></constructor-arg>
+    	<constructor-arg name="course">
+    		<set>
+            	<ref bean="course1"/>
+            	<ref bean="course2"/>
+            	<ref bean="course3"/> 
+    		</set>
+    	</constructor-arg>
+    </bean>
+    
+    <context:property-placeholder location="classpath:data.properties"/>
+    
+    <!-- using setter -->
+   <bean name="stud2" class="com.grayMatter.beans.Student" >
+    	<property name="name" value="${Customer.name}"></property>
+    	<property name="id" value="${Customer.id}"></property>
+    	<property name="number" value="${Customer.number}"></property>
+    	<property name="order" ref="ord"></property>
+    	<property name="course">
+    		<set>
+            	<ref bean="course1"/>
+            	<ref bean="course2"/>
+            	<ref bean="course3"/>
+    		</set>
+    	</property>
+    </bean>
+    
+     <bean name="ord" class="com.grayMatter.beans.Order">
+     <constructor-arg name="orderId" value="8"></constructor-arg>
+     <constructor-arg name="itemList">
+     	<list>
+     		<value>"item1"</value>
+     		<value>"item2"</value>
+     		<value>"item3"</value>
+     		<value>"item4"</value>
+     	</list>	
+     </constructor-arg>
+     </bean>
+     
+     <bean name="course1" class="com.grayMatter.beans.Course">
+     <constructor-arg name="id" value="1"></constructor-arg>
+     <constructor-arg name="name" value="Physics"></constructor-arg>
+     </bean>
+     <bean name="course2" class="com.grayMatter.beans.Course">
+     <constructor-arg name="id" value="2"></constructor-arg>
+     <constructor-arg name="name" value="ComputerScience"></constructor-arg>
+     </bean>
+     <bean name="course3" class="com.grayMatter.beans.Course">
+     <constructor-arg name="id" value="3"></constructor-arg>
+     <constructor-arg name="name" value="Maths"></constructor-arg>
+     </bean>
+     
+
+</beans>

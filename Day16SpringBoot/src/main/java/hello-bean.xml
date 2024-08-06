@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="hello" class="com.grayMatter.beans.HelloBeans">
+    </bean>
+    
+    <bean name="cust" class="com.grayMatter.beans.Customer">
+    	<constructor-arg name="name" value="user"></constructor-arg>
+    	<constructor-arg name="id" value="123"></constructor-arg>
+    	<constructor-arg name="number" value="1267890"></constructor-arg>
+    </bean>
+    
+    <bean name="cust1" class="com.grayMatter.beans.Customer">
+    	<property name="name" value="user"></property>
+    	<property name="id" value="134"></property>
+    	<property name="number" value="1234567890"></property>
+    </bean>
+
+</beans>
